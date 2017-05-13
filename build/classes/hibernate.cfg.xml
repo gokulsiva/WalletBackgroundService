@@ -1,0 +1,35 @@
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+
+<hibernate-configuration>
+
+<session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">
+                  oracle.jdbc.driver.OracleDriver
+        </property>
+        <property name="hibernate.connection.username">android</property>
+        <property name="hibernate.connection.password">project</property>
+        <property name="hibernate.connection.url">
+                   jdbc:oracle:thin:@localhost:1521:XE
+        </property>
+        
+        <!-- Database connection Pool Size -->
+        <property name="hibernate.connection.pool_size">100</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+        <!-- Echo all executed SQL to sysout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Map Entity Class -->
+	<mapping class="com.techgig.wallet.bean.UserBean"></mapping>
+	<mapping class="com.techgig.wallet.bean.WalletBean"></mapping>
+</session-factory>
+</hibernate-configuration>
